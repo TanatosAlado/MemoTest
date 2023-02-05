@@ -1,0 +1,10 @@
+.myButton{
+    width: 110px;
+    height: 110px;
+    margin-top: 15px;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 2rem;
+}
