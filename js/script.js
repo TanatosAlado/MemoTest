@@ -6,6 +6,7 @@ let opcion2 = "vacio"
 let pieza1 = 0;
 let pieza2 = 0;
 let aciertos = 0;
+let intentos = 0;
 
 
 
@@ -33,18 +34,23 @@ function destapar(id){
 
 function coincidencia(clave1, clave2, pieza1, pieza2){
     if(clave1 == clave2){
-        aciertos ++;
         arrayCompleto[parseInt(pieza1)].bloqueado=true
         arrayCompleto[parseInt(pieza2)].bloqueado=true
         pieza1 = 0;
         pieza2 = 0;
         opcion1 = "vacio";
         opcion2 = "vacio";
+        intentos++;
+        let numIntentos = document.getElementById("intentos");
+        numIntentos.innerHTML= intentos;
+        aciertos++;
+        let numAciertos = document.getElementById("aciertos");
+        numAciertos.innerHTML= aciertos;
     }
     else{
         setTimeout(() => {
             restablecer(pieza1, pieza2)
-        }, 1000);
+        }, 650);
     }
 }
 
@@ -63,6 +69,9 @@ function restablecer(pieza1, pieza2){
     pieza2 = 0;
     opcion1 = "vacio"
     opcion2 = "vacio"
+    intentos++;
+    let numIntentos = document.getElementById("intentos");
+    numIntentos.innerHTML= intentos;
 }
 
 function iniciar(){
@@ -82,6 +91,12 @@ function iniciar(){
         ponerImagen.src = ".//src/signo.png";
         opcion1 = "vacio"
         opcion2 = "vacio"
+        intentos=0;
+        let numIntentos = document.getElementById("intentos");
+        numIntentos.innerHTML= intentos;
+        aciertos =0;
+        let numAciertos = document.getElementById("aciertos");
+        numAciertos.innerHTML= aciertos;
     }
 }
 
