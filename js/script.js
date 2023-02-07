@@ -15,10 +15,6 @@ function destapar(id){
         let cadena = `foto${id}`
         let ponerImagen = document.getElementById(cadena)
         ponerImagen.src = arrayCompleto[parseInt(id) - 1].imagen;
-        console.log(`opcion1 ${opcion1}`)
-        console.log(`opcion2 ${opcion2}`)
-        console.log(opcion1 == "vacio")
-        console.log(`opcion1 ${opcion1}`)
         if(opcion1 === "vacio"){
             opcion1 = arrayCompleto[parseInt(id) - 1].nombre
             pieza1 = parseInt(id) - 1
@@ -27,12 +23,6 @@ function destapar(id){
         }else{
             opcion2= arrayCompleto[parseInt(id) - 1].nombre
             pieza2 = parseInt(id) - 1
-            console.log("Inicio coincidencia")
-            console.log(`opcion1 ${opcion1}`)
-            console.log(`opcion2 ${opcion2}`)
-            console.log(`pieza1 ${pieza1}`)
-            console.log(`pieza2 ${pieza2}`)
-            console.log("Fin coincidencia")
             coincidencia(opcion1, opcion2, pieza1, pieza2)
         }
     }
@@ -43,49 +33,36 @@ function destapar(id){
 
 function coincidencia(clave1, clave2, pieza1, pieza2){
     if(clave1 == clave2){
-        console.log("ingreso en el if de coincidencias")
         aciertos ++;
         arrayCompleto[parseInt(pieza1)].bloqueado=true
         arrayCompleto[parseInt(pieza2)].bloqueado=true
-        console.log(`aciertos: ${aciertos}`)
         pieza1 = 0;
         pieza2 = 0;
         opcion1 = "vacio";
         opcion2 = "vacio";
-        console.log(`opcion1 ${opcion1}`)
-        console.log(`opcion2 ${opcion2}`)
-        console.log("Salgo del if de coincidencias")
     }
     else{
-        console.log("ingreso en el else de coincidencias")
         setTimeout(() => {
             restablecer(pieza1, pieza2)
-        }, 2000);
-        console.log("Salgo del else de coincidencias")
+        }, 1000);
     }
 }
 
 function restablecer(pieza1, pieza2){
-    console.log("ingreso a restablecer")
-    console.log(`pieza1 ${pieza1}`)
-    console.log(`pieza2 ${pieza2}`)
     arrayCompleto[parseInt(pieza1)].girado=false;
     arrayCompleto[parseInt(pieza2)].girado=false;
     let soporte1 = parseInt(pieza1) + 1;
     let cadena1 = `foto${soporte1}`
-    console.log(`cadena1 ${cadena1}`)
     let ponerImagen = document.getElementById(cadena1)
     ponerImagen.src = ".//src/signo.png";
     let soporte2 = parseInt(pieza2) + 1;
     let cadena2 = `foto${soporte2}`
-    console.log(`cadena2 ${cadena2}`)
     let ponerImagen2 = document.getElementById(cadena2)
     ponerImagen2.src = ".//src/signo.png";
     pieza1 = 0;
     pieza2 = 0;
     opcion1 = "vacio"
     opcion2 = "vacio"
-    console.log("Salgo de restablecer")
 }
 
 function iniciar(){
@@ -106,7 +83,6 @@ function iniciar(){
         opcion1 = "vacio"
         opcion2 = "vacio"
     }
-    console.table(arrayCompleto)
 }
 
 
