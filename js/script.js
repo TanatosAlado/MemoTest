@@ -7,6 +7,7 @@ let pieza1 = 0;
 let pieza2 = 0;
 let aciertos = 0;
 let intentos = 0;
+let tiempo = 30;
 
 
 
@@ -50,7 +51,7 @@ function coincidencia(clave1, clave2, pieza1, pieza2){
     else{
         setTimeout(() => {
             restablecer(pieza1, pieza2)
-        }, 650);
+        }, 600);
     }
 }
 
@@ -97,7 +98,19 @@ function iniciar(){
         aciertos =0;
         let numAciertos = document.getElementById("aciertos");
         numAciertos.innerHTML= aciertos;
+        totalTime = 30;
     }
 }
 
 
+let totalTime = 30;
+
+function updateClock() {
+  document.getElementById('tiempo').innerHTML = totalTime;
+  if(totalTime==0){
+    alert("Fin del tiempo")
+  }else{
+    totalTime-=1;
+    setTimeout("updateClock()",1000);
+  }
+}

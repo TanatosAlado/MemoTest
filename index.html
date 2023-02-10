@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Memo Test</title>
 </head>
-<body class="body" onload="iniciar()">
+<body class="body">
     <div>
-        <h2 class="titulo">Memo Test</h2>
+        <h1 class="titulo">Memo Test</h1>
     </div>
     <div class="row justify-content-center aciertos">
         <div class="col-sm-1 col-md-1 col-lg-1"><button id="1" onclick="destapar(id)" class="myButton"><img class="imagenes" id="foto1" src="./src/signo.png" alt=""></button></div>
@@ -29,7 +29,7 @@
         <div class="col-sm-1 col-md-1 col-lg-1"><button id="8" onclick="destapar(id)" class="myButton"><img class="imagenes" id="foto8" src="./src/signo.png" alt=""></button></div>
         <div class="col-sm-2 col-md-2 col-lg-2">
             <div><h2>Tiempo</h2></div>
-            <div><h3 id="tiempo">30</h3></div>
+            <h3 class="tiempo" id="tiempo">30</h3>
         </div>
     </div>
     <div class="row justify-content-center aciertos">
@@ -48,13 +48,12 @@
         <div class="col-sm-1 col-md-1 col-lg-1"><button id="15" onclick="destapar(id)" class="myButton"><img class="imagenes" id="foto15" src="./src/signo.png" alt=""></button></div>
         <div class="col-sm-1 col-md-1 col-lg-1"><button id="16" onclick="destapar(id)" class="myButton"><img class="imagenes" id="foto16" src="./src/signo.png" alt=""></button></div>
         <div class="col-sm-2 col-md-2 col-lg-2 comienzo">
-            <button onclick="iniciar()">Iniciar</button>        
+            <!-- <button onclick="iniciar()">Iniciar</button>         -->
         </div>
     </div>
-
-
-   
-
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-2 col-md-2 col-lg-2"><button onclick="iniciar(), updateClock()">Comenzar</button></div>
+    </div>
     
     <script src="./js/script.js"></script>
 </body>
